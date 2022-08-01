@@ -261,7 +261,12 @@
                 openAccordion($accordion, $content);
             }
 
-            if (typeof resize == 'function' && containerSelector && iframeSelector) resize(containerSelector, iframeSelector)
+            if (typeof resize == 'function' && containerSelector && iframeSelector) {
+                setTimeout(function () {
+                    console.log('roge call resize ----->', 1);
+                    resize(containerSelector, iframeSelector);
+                }, 500);
+            } 
         }
 
         function addEventListeners() {
