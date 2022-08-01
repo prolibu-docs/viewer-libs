@@ -43,7 +43,7 @@
     color: #444;
     height: 15px;
     width: 24px;
-    background: url('../images/down.png') center center no-repeat;
+    background: url('https://s3.amazonaws.com/cdn.nodriza.io/images/down.png') center center no-repeat;
     background-size: 50%;
 }
 

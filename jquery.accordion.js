@@ -263,6 +263,10 @@
 
             if (typeof resize == 'function' && containerSelector && iframeSelector) {
                 setTimeout(function () {
+<<<<<<< HEAD
+=======
+                    console.log('roge call resize ----->', 1);
+>>>>>>> a017737e10a5c059d0110d111aeecc486b8d32f2
                     resize(containerSelector, iframeSelector);
                 }, 500);
             } 
