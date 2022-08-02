@@ -262,7 +262,7 @@
             }
 
             if (typeof resize == 'function' && containerSelector && iframeSelector) {
-                setTimeout(resize(containerSelector, iframeSelector), 500);
+                setTimeout(resize(containerSelector, iframeSelector), 100);
             } 
         }
 
