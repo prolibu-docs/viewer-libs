@@ -16,6 +16,12 @@
             singleOpen: true
         };
 
+    function callResize () {
+        if (typeof resize == 'function' && containerSelector && iframeSelector) {
+            setTimeout(resize(containerSelector, iframeSelector), 100);
+        } 
+    }
+
     function Accordion(element, options) {
         this.element = element;
         this.options = $.extend({}, defaults, options);
@@ -38,6 +44,8 @@
         var closedCSS = { 'max-height': 0, 'overflow': 'hidden' };
 
         var CSStransitions = supportsTransitions();
+
+        $('.collapsible').click(callResize);
 
         function debounce(func, threshold, execAsap) {
             var timeout;
@@ -261,9 +269,7 @@
                 openAccordion($accordion, $content);
             }
 
-            if (typeof resize == 'function' && containerSelector && iframeSelector) {
-                setTimeout(resize(containerSelector, iframeSelector), 500);
-            } 
+            callResize();
         }
 
         function addEventListeners() {
