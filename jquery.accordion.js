@@ -45,7 +45,10 @@
 
         var CSStransitions = supportsTransitions();
 
-        $('.collapsible').click(callResize);
+        document.querySelectorAll('.collapsible').forEach(function (item) {
+            console.log('item ---->', item);
+            item.addEventListener('click', callResize);
+        }); 
 
         function debounce(func, threshold, execAsap) {
             var timeout;
