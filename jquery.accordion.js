@@ -12,7 +12,6 @@ function callResize_p20939847346836276323 () {
 
 document.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll('.collapsible').forEach(function (item) {
-        console.log('item ---->', item);
         item.addEventListener('click', callResize_p20939847346836276323);
     }); 
 });
