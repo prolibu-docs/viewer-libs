@@ -4,6 +4,19 @@
  * MIT Licensed.
  */
 
+function callResize_p20939847346836276323 () {
+    if (typeof resize == 'function' && containerSelector && iframeSelector) {
+        setTimeout(resize(containerSelector, iframeSelector), 100);
+    } 
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll('.collapsible').forEach(function (item) {
+        console.log('item ---->', item);
+        item.addEventListener('click', callResize_p20939847346836276323);
+    }); 
+});
+
 ;(function ( $, window, document, undefined ) {
 
     var pluginName = 'accordion',
@@ -15,12 +28,6 @@
             groupElement: '[data-accordion-group]',
             singleOpen: true
         };
-
-    function callResize () {
-        if (typeof resize == 'function' && containerSelector && iframeSelector) {
-            setTimeout(resize(containerSelector, iframeSelector), 100);
-        } 
-    }
 
     function Accordion(element, options) {
         this.element = element;
@@ -45,10 +52,6 @@
 
         var CSStransitions = supportsTransitions();
 
-        document.querySelectorAll('.collapsible').forEach(function (item) {
-            console.log('item ---->', item);
-            item.addEventListener('click', callResize);
-        }); 
 
         function debounce(func, threshold, execAsap) {
             var timeout;
@@ -272,7 +275,7 @@
                 openAccordion($accordion, $content);
             }
             
-            callResize();
+            callResize_p20939847346836276323();
         }
 
         function addEventListeners() {
