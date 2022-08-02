@@ -271,7 +271,7 @@
             } else {
                 openAccordion($accordion, $content);
             }
-
+            
             callResize();
         }
 
